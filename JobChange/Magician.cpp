@@ -3,7 +3,11 @@
 
 Magician::Magician(string nickname) : Player(nickname)
 {
-	job_name = "Magicia";
+	job_name = "Magician";
+    HP = 30;
+    power = 35;
+    defence = 15;
+    speed = 10;
 }
 
 void Magician::attack()
@@ -17,7 +21,7 @@ void Magician::attack(Monster* monster)
 
     int Damage = monster->getDefence() - getPower();
 
-    if (Damage < 0) Damage = 1;
+    if (Damage > 0) Damage = -1;
 
     if (monster->setHP(Damage)) // if monster survive
     {

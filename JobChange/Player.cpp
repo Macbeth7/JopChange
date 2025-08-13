@@ -28,7 +28,7 @@ void Player::setNickname(string nickname)
 
 bool Player::setHP(int HP)
 {
-    this->HP -= HP;
+    this->HP += HP;
 
     if (this->HP > 0)
     {

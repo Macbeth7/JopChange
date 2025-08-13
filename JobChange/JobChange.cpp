@@ -53,10 +53,10 @@ int main() {
 
     player->printPlayerStatus();
 
-    player->attack(&monster);
-    monster.attack(player);
-    /*
-    while (player->getHP() > 0 || monster.getHP() > 0)
+    //player->attack(&monster);
+    //monster.attack(player);
+    
+    while (player->getHP() > 0 && monster.getHP() > 0)
     {
         if (player->getSpeed() > monster.getSpeed())
         {
@@ -68,7 +68,6 @@ int main() {
             player->attack(&monster);
         }
     }
-    */
 
     delete player;
 

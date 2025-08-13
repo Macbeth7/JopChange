@@ -3,7 +3,11 @@
 
 Archer::Archer(string nickname) : Player(nickname)
 {
-	job_name = "Warrior";
+	job_name = "Archer";
+    HP = 30;
+    power = 20;
+    defence = 10;
+    speed = 15;
 }
 
 void Archer::attack()
@@ -18,7 +22,7 @@ void Archer::attack(Monster* monster)
     int Damage = monster->getDefence() - getPower();
     int ArcherDamge = Damage / 3;
 
-    if (ArcherDamge <= 0) ArcherDamge = 1;
+    if (ArcherDamge >= 0) ArcherDamge = -1;
 
     for (int Attack_Count = 0; Attack_Count < 3; Attack_Count++)
     {

@@ -4,6 +4,10 @@
 Warrior::Warrior(string nickname) : Player(nickname)
 {
 	job_name = "Warrior";
+    HP = 30;
+    power = 30;
+    defence = 15;
+    speed = 10;
 }
 
 void Warrior::attack()
@@ -17,7 +21,7 @@ void Warrior::attack(Monster* monster)
 
     int Damage = monster->getDefence() - getPower();
 
-    if (Damage < 0) Damage = 1;
+    if (Damage > 0) Damage = -1;
 
     if (monster->setHP(Damage)) // if monster survive
     {

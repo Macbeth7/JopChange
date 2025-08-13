@@ -16,7 +16,7 @@ void Monster::attack(Player* player)
 
     int Damage = player->getDefence() - getPower();
     
-    if (Damage < 0) Damage = 1;
+    if (Damage > 0) Damage = 1;
 
     if (player->setHP(Damage)) // if player survive
     {
@@ -34,7 +34,7 @@ void Monster::setName(string name)
 
 bool Monster::setHP(int HP)
 {
-    this->HP -= HP;
+    this->HP += HP;
 
     if (this->HP > 0)
     {
